@@ -38,7 +38,7 @@ business_search <- function(api_key,
   res <- GET("https://api.yelp.com/v3/businesses/search",
              add_headers(Authorization = prepare_header(api_key)),
              query = parameters)
-
+print(content(res, type = "text"))
   fromJSON(content(res, type = "text"))
 }
 
